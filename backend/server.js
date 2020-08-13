@@ -20,7 +20,7 @@ app.use(express.static(path.join("public/build")));
 
 //controllers
 const getMadsController = require('./controllers/getmads.js');
-app.use('/getmads', getMadsController);
+app.use('/api', getMadsController);
 app.use((req, res, next) => {
     res.sendFile(path.resolve(__dirname, "public/build", "index.html"));
 });
