@@ -40,7 +40,7 @@ export default function Feed() {
           <Card>
             <CardHeader>
               <div className="m-r-sm inline-block">
-                <div className="avatar avatar-base bg-blue">
+                <div className="avatar avatar-base bg-teal">
                   <div className="user-initials">GC</div>
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function Feed() {
           <Card>
             <CardHeader>
               <div className="m-r-sm inline-block">
-                <div className="avatar avatar-base bg-orange">
+                <div className="avatar avatar-base bg-teal">
                   <div className="user-initials">JS</div>
                 </div>
               </div>

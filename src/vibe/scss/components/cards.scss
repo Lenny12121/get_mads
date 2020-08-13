@@ -2,11 +2,16 @@
    ----------------------------- */
 
 .card {
-	background: white;
+	background: #fafcfb;
 	border-radius: $cardRoundedCorner;
 	@include cardShadow;
 	border: 0;
 	margin-bottom: 20px;
+	border-radius: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	min-height: 230px;
+	width: 100%;
 
 	hr {
 		margin-left: -$panelPadding;

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Button, Badge, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { Header, SidebarNav, Footer, PageContent, Avatar, Chat, PageAlert, Page } from '../vibe';
-import Logo from '../assets/images/vibe-logo.svg';
-import avatar1 from '../assets/images/avatar1.png';
+import { Header, SidebarNav, Footer, PageContent, Avatar, PageAlert, Page } from '../vibe';
+import Logo from '../assets/images/bird.png';
 import nav from '../_nav';
 import routes from '../views';
 import ContextProviders from '../vibe/components/utilities/ContextProviders';
@@ -64,7 +63,7 @@ export default class DashboardLayout extends Component {
             <SidebarNav
               nav={nav}
               logo={Logo}
-              logoText="VIBE."
+              logoText=" Get Mads"
               isSidebarCollapsed={sidebarCollapsed}
               toggleSidebar={this.toggleSideCollapse}
               {...this.props}
@@ -89,22 +88,22 @@ export default class DashboardLayout extends Component {
             </Page>
           </div>
           <Footer>
-            <span>Copyright © 2019 Nice Dash. All rights reserved.</span>
-            <span>
+            <span>Copyright © 2020 Get Mads</span>
+            {/* <span>
               <a href="#!">Terms</a> | <a href="#!">Privacy Policy</a>
-            </span>
+            </span> */}
             <span className="ml-auto hidden-xs">
               Made with{' '}
               <span role="img" aria-label="taco">
-                🌮
+                &hearts; in Vienna & London
               </span>
             </span>
           </Footer>
-          <Chat.Container>
+          {/* <Chat.Container>
             {this.state.showChat1 && (
               <Chat.ChatBox name="Messages" status="online" image={avatar1} close={this.closeChat} />
             )}
-          </Chat.Container>
+          </Chat.Container> */}
         </div>
       </ContextProviders>
     );
@@ -114,15 +113,15 @@ export default class DashboardLayout extends Component {
 function HeaderNav() {
   return (
     <React.Fragment>
-      <NavItem>
+      {/* <NavItem>
         <form className="form-inline">
           <input className="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search" />
           <Button type="submit" className="d-none d-sm-block">
             <i className="fa fa-search" />
           </Button>
         </form>
-      </NavItem>
-      <UncontrolledDropdown nav inNavbar>
+      </NavItem> */}
+      {/* <UncontrolledDropdown nav inNavbar>
         <DropdownToggle nav caret>
           New
         </DropdownToggle>
@@ -134,16 +133,15 @@ function HeaderNav() {
             Message <Badge color="primary">10</Badge>
           </DropdownItem>
         </DropdownMenu>
-      </UncontrolledDropdown>
+      </UncontrolledDropdown> */}
       <UncontrolledDropdown nav inNavbar>
         <DropdownToggle nav>
-          <Avatar size="small" color="blue" initials="JS" />
+          <Avatar size="small" color="teal" initials="LL" />
         </DropdownToggle>
         <DropdownMenu right>
-          <DropdownItem>Option 1</DropdownItem>
-          <DropdownItem>Option 2</DropdownItem>
+          <DropdownItem>View Profile</DropdownItem>
           <DropdownItem divider />
-          <DropdownItem>Reset</DropdownItem>
+          <DropdownItem>Log out</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </React.Fragment>

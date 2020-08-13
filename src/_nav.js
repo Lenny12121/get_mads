@@ -1,13 +1,23 @@
 export default {
   top: [
     {
-      name: 'Home',
+      name: 'Your Impact',
       url: '/home',
-      icon: 'Home',
+      icon: 'Target',
     },
     {
-      name: 'UI Elements',
-      icon: 'Layers',
+      name: 'Supported Projects',
+      url: '/supported-projects',
+      icon: 'Heart',
+    },
+    {
+      name: 'Public Ledger',
+      url: '/public-ledger',
+      icon: 'BookOpen',
+    },
+    {
+      name: 'Add Impact',
+      icon: 'PlusCircle',
       children: [
         {
           name: 'Buttons',
@@ -68,8 +78,8 @@ export default {
       ],
     },
     {
-      name: 'Pages',
-      icon: 'File',
+      name: 'Resources',
+      icon: 'Layers',
       children: [
         {
           name: 'Blank',
@@ -86,47 +96,18 @@ export default {
       ],
     },
     {
-      name: 'Apps',
-      icon: 'Cloud',
-      children: [
-        {
-          name: 'Analytics',
-          url: '/apps/analytics',
-        },
-        {
-          name: 'Invoice',
-          url: '/apps/invoice',
-        },
-        {
-          name: 'Activity Feed',
-          url: '/apps/feed',
-        },
-        {
-          name: 'CMS',
-          url: '/apps/cms',
-        },
-      ],
-    },
-    {
       divider: true,
     },
-    {
-      name: 'Widgets',
-      url: '/widgets',
-      icon: 'Package',
-      badge: {
-        text: 'NEW',
-      },
-    },
+    // {
+    //   name: 'Widgets',
+    //   url: '/widgets',
+    //   icon: 'Package',
+    //   badge: {
+    //     text: 'NEW',
+    //   },
+    // },
   ],
   bottom: [
-    {
-      name: 'Get Vibe',
-      url: 'https://github.com/NiceDash/Vibe',
-      icon: 'GitHub',
-      external: true,
-      target: '_blank',
-    },
     {
       name: 'Account',
       url: '/dashboard',

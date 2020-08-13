@@ -8,6 +8,7 @@
   background: $sidenavBgColor;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 0px rgba(0, 0, 0, 0.03), 0 1px 8px rgba(0, 21, 41, 0.12);
 
   &.has-alert {
     top: 48px;
@@ -41,8 +42,8 @@
     }
 
     > img {
-      max-height: 30px;
-      max-width: 30px;
+      max-height: 40px;
+      max-width: 40px;
       display: inline-block;
     }
 
@@ -64,7 +65,7 @@
   .side-menu-collapsed {
     .site-logo-bar {
       .navbar-brand {
-        padding: 0 10px;
+        padding: 0 5px;
 
         .logo-text {
           opacity: 0;
@@ -144,11 +145,12 @@
       padding: 14px 20px;
       color: $sideNavTextColor;
       border-color: transparent;
+      font-weight: bold;
 
       &.active,
       &:hover {
         background: $sidenavBgHover;
-        color: #fff;
+        color: #fafcfb;
       }
 
       &:focus {

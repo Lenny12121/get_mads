@@ -25,7 +25,7 @@ import ErrorPage from './pages/404';
 // See React Router documentation for details: https://reacttraining.com/react-router/web/api/Route
 const pageList = [
   {
-    name: 'Dashboard',
+    name: 'Your Impact',
     path: '/home',
     component: Dashboard,
   },
