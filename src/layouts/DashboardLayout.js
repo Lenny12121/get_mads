@@ -8,6 +8,10 @@ import routes from '../views';
 import ContextProviders from '../vibe/components/utilities/ContextProviders';
 import handleKeyAccessibility, { handleClickAccessibility } from '../vibe/helpers/handleTabAccessibility';
 
+import  LoginButton from '../vibe/components/login';
+import  LogOutButton from '../vibe/components/logout';
+
+
 const MOBILE_SIZE = 992;
 
 export default class DashboardLayout extends Component {
@@ -141,7 +145,8 @@ function HeaderNav() {
         <DropdownMenu right>
           <DropdownItem>View Profile</DropdownItem>
           <DropdownItem divider />
-          <DropdownItem>Log out</DropdownItem>
+          <DropdownItem><LoginButton /></DropdownItem>
+          <DropdownItem><LogOutButton /></DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </React.Fragment>
