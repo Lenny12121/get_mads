@@ -1,5 +1,4 @@
-  import React, { Component } from 'react';
-  import bootstrapFeature from '../../assets/images/bootstrap-feature.svg';
+import React, { useState, useEffect, Component } from 'react';
   import { Card, CardBody, Row, Col } from 'reactstrap';
   import Profile from "./widgets/ProfileWidget";
   import Flights from '../../assets/images/flights.gif';
@@ -9,7 +8,9 @@
   import Coffee from '../../assets/images/coffee.gif';
   import Plant from '../../assets/images/plant.gif';
 
+  // import Test from './test';
   class Dashboard extends Component {
+
     render() {
       const heroStyles = {
         padding: '20px 0 40px',
@@ -26,10 +27,9 @@
             </Col>
           </Row>
           <Row>
-            <Col md={5}>
+            <Col md={6}>
               <Profile />
             </Col>
-            
             <Col md={3}>
               <Row>
               <Card>

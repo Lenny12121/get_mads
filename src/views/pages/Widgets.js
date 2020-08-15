@@ -9,6 +9,7 @@ import TrafficWidget from './widgets/TrafficWidget';
 import RatingWidget from './widgets/RatingWidget';
 
 export default function Widgets() {
+
   return (
     <Row>
       <Col md={4}>

@@ -3,19 +3,29 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './registerServiceWorker';
 import App from './App';
 import { Auth0Provider } from "@auth0/auth0-react";
-require('dotenv').config()
+import history from "./utils/history";
 
+require('dotenv').config();
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
+const onRedirectCallback = (appState) => {
+    history.push(
+      appState && appState.returnTo
+        ? appState.returnTo
+        : window.location.pathname
+    );
+  };
+
 ReactDOM.render(
     <Auth0Provider
-        domain={domain}
-        clientId={clientId}
+        domain='get-mads.eu.auth0.com'
+        clientId='NlxMZ2eLSHr1brBFb0SFsD0wwWDiaqwM'
         redirectUri={window.location.origin}
+        // onRedirectCallback={onRedirectCallback}
     >
-    <App />
+        <App />
     </Auth0Provider>,
     document.getElementById('app')
 );
