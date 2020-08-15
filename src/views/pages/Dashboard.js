@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
   import { Card, CardBody, Row, Col } from 'reactstrap';
   import Profile from "./widgets/ProfileWidget";
   import Flights from '../../assets/images/flights.gif';
@@ -8,21 +8,83 @@ import React, { useState, useEffect, Component } from 'react';
   import Coffee from '../../assets/images/coffee.gif';
   import Plant from '../../assets/images/plant.gif';
 
+  import { useAuth0 } from "@auth0/auth0-react";
 
-  // import Test from './test';
-  class Dashboard extends Component {
+  let baseURL = 'http://localhost:3003';
 
-    render() {
-      const heroStyles = {
-        padding: '20px 0 40px',
-        color: '#1a3066'
-      };
+  function Dashboard()  {
+
+  //   checkUser = () => {
+  //     if (isAuthenticated)  {
+  //         const email = user.email;
+  //         fetch(baseURL + '/api/user', {
+  //             method: 'POST',
+  //             body: JSON.stringify({ email }),
+  //             headers: {
+  //                 'Content-Type': 'application/json'
+  //             }
+  //         }).then (res => res.json())
+  //         .then (data => {
+  //             console.log('this is the data:' , data);
+  //         }).catch(error => console.error({ 'Error': error }));
+  //     }
+  // } 
+
+  // async componentDidMount() {
+  //   const { isAuthenticated, user } = this.props.auth0;
+  //   console.log('auth', isAuthenticated,  'user:', user)
+  //   await this.setState ({
+  //     user: user,
+  //     isAuthenticated: isAuthenticated,
+  //   });
+  //   this.checkUser();
+  // }
+
+  const { isAuthenticated, user } = useAuth0();
+
+  const [userData, setData] = useState({});
+  const [toggle, setToggle] = useState(1);
+
+    
+  const checkUser = () => {
+      if (isAuthenticated)  {
+          const email = user.email;
+          fetch(baseURL + '/api/user', {
+              method: 'POST',
+              body: JSON.stringify({ email }),
+              headers: {
+                  'Content-Type': 'application/json'
+              }
+          }).then (res => res.json())
+          .then (data => {
+              console.log('this is the data:' , data);
+              setData(data)
+              setToggle(0);
+            }).catch(error => console.error({ 'Error': error }));
+      }
+  } 
+
+  useEffect(() => {
+    console.log(userData)
+    console.log(toggle)
+      if (toggle == 1)  {
+        checkUser();
+      }
+  });
+
+    // render() {
+    //   const heroStyles = {
+    //     padding: '20px 0 40px',
+    //     color: '#1a3066'
+    //   };
 
       return (
         <div>
+          <p>{userData.email}</p>
           <Row>
             <Col md={6}>
-              <div className="home-hero" style={heroStyles}>
+              {/* <div className="home-hero" style={heroStyles}> */}
+              <div className="home-hero">
                 <h1>Welcome Back (Company Name)!</h1>
               </div>
             </Col>
@@ -147,6 +209,6 @@ import React, { useState, useEffect, Component } from 'react';
         </div>
       );
     }
-  }
+
 
   export default Dashboard;

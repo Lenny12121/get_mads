@@ -20,18 +20,18 @@ app.use(express.json());
 app.use(express.static(path.join("public/build")));
 
 //CORS
-// const whitelist = ['http://localhost:3000'];
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (whitelist.indexOf(origin) >= 0) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-// };
+const whitelist = ['http://localhost:3000'];
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) >= 0) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 //controllers
 const getMadsController = require('./controllers/getmads.js');
