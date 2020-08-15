@@ -14,38 +14,10 @@ import React, { useState, useEffect } from 'react';
 
   function Dashboard()  {
 
-  //   checkUser = () => {
-  //     if (isAuthenticated)  {
-  //         const email = user.email;
-  //         fetch(baseURL + '/api/user', {
-  //             method: 'POST',
-  //             body: JSON.stringify({ email }),
-  //             headers: {
-  //                 'Content-Type': 'application/json'
-  //             }
-  //         }).then (res => res.json())
-  //         .then (data => {
-  //             console.log('this is the data:' , data);
-  //         }).catch(error => console.error({ 'Error': error }));
-  //     }
-  // } 
-
-  // async componentDidMount() {
-  //   const { isAuthenticated, user } = this.props.auth0;
-  //   console.log('auth', isAuthenticated,  'user:', user)
-  //   await this.setState ({
-  //     user: user,
-  //     isAuthenticated: isAuthenticated,
-  //   });
-  //   this.checkUser();
-  // }
-
   const { isAuthenticated, user } = useAuth0();
-
   const [userData, setData] = useState({});
   const [toggle, setToggle] = useState(1);
 
-    
   const checkUser = () => {
       if (isAuthenticated)  {
           const email = user.email;
@@ -72,26 +44,17 @@ import React, { useState, useEffect } from 'react';
       }
   });
 
-    // render() {
-    //   const heroStyles = {
-    //     padding: '20px 0 40px',
-    //     color: '#1a3066'
-    //   };
 
       return (
         <div>
-          <p>{userData.email}</p>
           <Row>
-            <Col md={6}>
-              {/* <div className="home-hero" style={heroStyles}> */}
-              <div className="home-hero">
-                <h1>Welcome Back (Company Name)!</h1>
+          <div className="home-hero">
+                <h1 style={{ color: '#1a3066', paddingBottom: '20px'}}>Welcome Back {userData.companyName}!</h1>
               </div>
-            </Col>
           </Row>
           <Row>
             <Col md={6}>
-              <Profile />
+              <Profile userData={userData}/>
             </Col>
             <Col md={3}>
               <Row>
