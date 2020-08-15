@@ -9,8 +9,6 @@ import ContextProviders from '../vibe/components/utilities/ContextProviders';
 import handleKeyAccessibility, { handleClickAccessibility } from '../vibe/helpers/handleTabAccessibility';
 
 import  LoginButton from '../vibe/components/login';
-import  LogOutButton from '../vibe/components/logout';
-
 
 const MOBILE_SIZE = 992;
 
@@ -146,7 +144,6 @@ function HeaderNav() {
           <DropdownItem>View Profile</DropdownItem>
           <DropdownItem divider />
           <DropdownItem><LoginButton /></DropdownItem>
-          <DropdownItem><LogOutButton /></DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     </React.Fragment>

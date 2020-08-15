@@ -8,6 +8,7 @@ import React, { useState, useEffect, Component } from 'react';
   import Coffee from '../../assets/images/coffee.gif';
   import Plant from '../../assets/images/plant.gif';
 
+
   // import Test from './test';
   class Dashboard extends Component {
 

@@ -26,7 +26,7 @@ import ErrorPage from './pages/404';
 const pageList = [
   {
     name: 'Your Impact',
-    path: '/home',
+    path: '/',
     component: Dashboard,
   },
   {

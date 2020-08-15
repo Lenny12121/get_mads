@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true},
-    email: {type: String, required: true},
+    firstName: {type: String},
+    lastName: {type: String},
+    email: {type: String, required: true, unique: true},
 },  {
-    timestamps: { currentTime: () => Math.floor(Date.now() / 1000) }
+    timestamps: true
 })
 
 module.exports = mongoose.model('user', userSchema);
