@@ -1,8 +1,8 @@
 {
-  "name": "vibe-react",
+  "name": "Dashboard",
   "version": "1.0.2",
   "description": "Get Mads",
-  "author": "Nice Dash",
+  "author": "",
   "homepage": "http://getmads.com",
   "copyright": "Copyright 2020 Get Mads",
   "private": true,

@@ -14,7 +14,7 @@ import NumericLabel from 'react-pretty-numbers';
 
 let baseURL = 'http://localhost:3003';
 
-function Dashboard()  {
+export default function Dashboard () {
 
   let option = {
     'justification': 'L',
@@ -289,6 +289,3 @@ function Dashboard()  {
         </div>
       );
     }
-
-
-  export default Dashboard;

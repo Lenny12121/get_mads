@@ -1,4 +1,5 @@
 import Dashboard from './pages/Dashboard';
+import Account from './pages/Account'
 import Buttons from './elements/Buttons';
 import Alerts from './elements/Alerts';
 import Grid from './elements/Grid';
@@ -26,13 +27,13 @@ import ErrorPage from './pages/404';
 const pageList = [
   {
     name: 'Your Impact',
-    path: '/',
+    path: '/home',
     component: Dashboard,
   },
   {
-    name: 'Buttons',
-    path: '/elements/buttons',
-    component: Buttons,
+    name: 'Account',
+    path: '/account',
+    component: Account,
   },
   {
     name: 'Alerts',

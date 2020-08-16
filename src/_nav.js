@@ -2,7 +2,7 @@ export default {
   top: [
     {
       name: 'Your Impact',
-      url: '/home',
+      url: '/',
       icon: 'Target',
     },
     {
@@ -110,12 +110,12 @@ export default {
   bottom: [
     {
       name: 'Account',
-      url: '/dashboard',
+      url: '/account',
       icon: 'User',
-      badge: {
-        variant: 'success',
-        text: '3',
-      },
+      // badge: {
+      //   variant: 'success',
+      //   text: '3',
+      // },
     },
   ],
 };
