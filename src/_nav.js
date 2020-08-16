@@ -2,9 +2,14 @@ export default {
   top: [
     {
       name: 'Your Impact',
-      url: '/',
+      url: '/home',
       icon: 'Target',
     },
+    // {
+    //   name: 'Your Impact',
+    //   url: '/',
+    //   icon: 'Target',
+    // },
     {
       name: 'Supported Projects',
       url: '/supported-projects',

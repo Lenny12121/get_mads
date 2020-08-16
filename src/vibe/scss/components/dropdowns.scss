@@ -1,5 +1,5 @@
 .dropdown-menu {
-    color: rgba(0,0,0,.87);
+    color: #667380;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,.1);
     transform-origin: top right;
@@ -8,14 +8,17 @@
     a, button {
         &:hover,
         &:active {
-            background-color: transparentize($colorPrimary, .95)!important;
+            background-color: transparentize(#43bfbf, .95)!important;
         }
+    }
+    .dropdown-item  {
+        color: #667380;
     }
 
     .dropdown-item {
         &.active,
         &:active {
-            color: rgba(0,0,0,.87);
+            color: #667380;
         }
     }
 }

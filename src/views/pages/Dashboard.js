@@ -54,16 +54,16 @@ export default function Dashboard () {
 
   const checkUser = () => {
       if (isAuthenticated)  {
+          const authId = user.sub;
           const email = user.email;
           fetch(baseURL + '/api/user', {
               method: 'POST',
-              body: JSON.stringify({ email }),
+              body: JSON.stringify({ authId, email }),
               headers: {
                   'Content-Type': 'application/json'
               }
           }).then (res => res.json())
           .then (data => {
-              console.log('this is the data:' , data);
               setData(data)
               setToggle(0);
             }).catch(error => console.error({ 'Error': error }));
@@ -145,10 +145,6 @@ export default function Dashboard () {
     let avgBathTub = 520;
     let bathtubs = totalPlasticBottles/avgBathTub;
 
-
-
-
-
   useEffect(() => {
     console.log(userData)
     console.log(toggle)
@@ -157,12 +153,12 @@ export default function Dashboard () {
       }
   });
 
-
       return (
         <div>
           <Row>
           <div className="home-hero">
-                <h1 style={{ color: '#1a3066', paddingBottom: '20px'}}>Welcome Back {userData.companyName}!</h1>
+                <h1 style={{ color: '#1a3066', paddingBottom: '0px'}}>Welcome Back {userData.companyName}!</h1>
+                <h3 style={{ color: '#667380', paddingBottom: '20px'}}>You are having an amazing positive impact!</h3>
               </div>
           </Row>
           <Row>
@@ -174,6 +170,7 @@ export default function Dashboard () {
                 totalPlasticBottles={totalPlasticBottles}/>
             </Col>
             <Col md={3}>
+              <Row><h5 style={{ color: '#667380', textAlign: 'center', width:'100%'}}>Your CO2 Offset is equivalent to:</h5></Row>
               <Row>
               <Card>
                 <CardBody className="flex-column-center">
@@ -231,6 +228,7 @@ export default function Dashboard () {
             </Col>
 
             <Col md={3}>
+              <Row><h5 style={{ color: '#667380', textAlign: 'center', width:'100%'}}>Your Plastic Offset is equivalent to:</h5></Row>
               <Row>
               <Card>
                 <CardBody className="flex-column-center">

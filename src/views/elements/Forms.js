@@ -1,24 +1,94 @@
 import React, {Component} from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Col, Row, Card, CardBody } from 'reactstrap';
 
+let baseURL = 'http://localhost:3003';
+
 export default class FormsPage extends Component {
-  constructor() {
-    super();
-    this.state = { }
+  state = {
+    firstName: '',
+    lastName: '',
+    companyName: '',
+    email: '',
+    profileDescription: '',
   }
+
+  handleChange = (event) => {
+    this.setState({
+        [event.currentTarget.id]: event.target.value,
+    })
+  }
+
+  handleSubmit = (event) => {
+    let firstName = this.state.firstName
+    if (!this.state.firstName) {
+      firstName = this.props.userData.firstName;
+    };
+    let lastName = this.state.lastName
+    if (!this.state.lastName) {
+      lastName = this.props.userData.lastName;
+    };
+    let companyName = this.state.companyName
+    if (!this.state.companyName) {
+      companyName = this.props.userData.companyName;
+    };
+    let profileDescription = this.state.profileDescription
+    if (!this.state.profileDescription) {
+      profileDescription = this.props.userData.profileDescription;
+    };
+    fetch(baseURL + '/api/update', {
+        method: 'PUT',
+        body: JSON.stringify({ 
+          firstName: firstName,
+          lastName: lastName,
+          companyName: companyName,
+          authId: this.props.userData.authId,
+          profileDescription: profileDescription,
+          imageURL: this.props.imageUrl,
+          imageAlt: this.props.imageAlt,
+        }),
+        headers:  {
+            'Content-Type': 'application/json'
+        }
+    }).then(res =>  {
+        return res.json()
+    }).then(data =>  {
+      console.log('this is the passed user data: ', data);
+        // this.setState({
+        //     name: '',
+        // })
+    }).catch(error =>  console.log({'Error': error}))
+  }
+
+  
 
   render() {
     return (
       <Row>
           <Col md={{ size: 8, offset: 2 }}>
-            <Card>
+            <Card style={{ boxShadow:'none' }}>
                 <CardBody>
-          <Form>
+        <Form>
         <FormGroup>
-          <Label for="name">Name</Label>
-          <Input type="text" name="name" id="name" placeholder="First and Last" />
+          <Label for="firstName">First Name</Label>
+          <Input type="text" name="firstName" id="firstName" placeholder={ this.props.userData.lastName ? this.props.userData.firstName : "Enter First Name" } onChange={ (evt) => this.handleChange(evt) }/>
         </FormGroup>
         <FormGroup>
+          <Label for="lastName">Last Name</Label>
+          <Input type="text" name="lastName" id="lastName"  placeholder={ this.props.userData.lastName ? this.props.userData.lastName : "Enter Last Name" } onChange={ (evt) => this.handleChange(evt) }/>
+        </FormGroup>
+        <FormGroup>
+          <Label for="companyName">Company / Brand Name</Label>
+          <Input type="text" name="companyName" id="companyName" placeholder={ this.props.userData.companyName ? this.props.userData.companyName : "Enter Company / Brand Name" } onChange={ (evt) => this.handleChange(evt) }/>
+        </FormGroup>
+        {/* <FormGroup>
+          <Label for="email">Email Address</Label>
+          <Input type="email" name="email" id="email" placeholder={ this.props.userData.email ? this.props.userData.email : "Enter Email" } onChange={ (evt) => this.handleChange(evt) }/>
+        </FormGroup> */}
+        <FormGroup>
+          <Label for="profileDescription">Profile Description</Label>
+          <Input type="textarea" name="profileDescription" id="profileDescription" placeholder={ this.props.userData.profileDescription ? this.props.userData.profileDescription : "Why did you join Get Mads and start fighting the climate madness?" } onChange={ (evt) => this.handleChange(evt) }/>
+        </FormGroup>
+        {/* <FormGroup>
           <Label for="exampleSelect">Select</Label>
           <Input type="select" name="select" id="exampleSelect">
             <option>1</option>
@@ -37,10 +107,6 @@ export default class FormsPage extends Component {
             <option>4</option>
             <option>5</option>
           </Input>
-        </FormGroup>
-        <FormGroup>
-          <Label for="exampleText">Text Area</Label>
-          <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
         <FormGroup>
           <Label for="exampleFile">File</Label>
@@ -76,8 +142,8 @@ export default class FormsPage extends Component {
             <Input type="checkbox" />{' '}
             Check me out
           </Label>
-        </FormGroup>
-        <Button>Submit</Button>
+        </FormGroup> */}
+        <Button onClick={ (evt) =>  this.handleSubmit(evt) } >Update Profile</Button>
       </Form>
       </CardBody>
       </Card>

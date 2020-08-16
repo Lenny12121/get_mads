@@ -2,6 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Row, Card, Button } from 'reactstrap';
 import Sun from '../../assets/images/sun.gif';
 import World from '../../assets/images/world.gif';
+import { useAuth0 } from "@auth0/auth0-react";
+import Form from '../elements/Forms';
+
+require('dotenv').config();
+
+let baseURL = 'http://localhost:3003';
+
+//ENV NOT WORKING
+const cloudN = process.env.REACT_APP_CLOUD_NAME;
+const uploadPreset = process.env.REACT_APP_UPLOAD_PRESETS;
 
 export default function Account(props) {
     const [imageUrl, setImageUrl] = useState();
@@ -10,10 +20,9 @@ export default function Account(props) {
     //Cloudinary upload adapted from here: https://blog.logrocket.com/handling-images-with-cloudinary-in-react/
 
     const showWidget = () => {
-    
-        let widget = window.cloudinary.createUploadWidget({ 
+        let widget = window.cloudinary.createUploadWidget({
             cloudName: 'dlilerh6s',
-            uploadPreset: 'pby0gwgy'}, 
+            uploadPreset: 'pby0gwgy' }, 
             (error, result) => {
                 if (!error && result && result.event === "success") { 
                     console.log(result.info.url); 
@@ -24,31 +33,54 @@ export default function Account(props) {
         widget.open()
     }
 
+    const { isAuthenticated, user } = useAuth0();
+    const [userData, setData] = useState({});
+    const [toggle, setToggle] = useState(1);
+
+    const checkUser = () => {
+        if (isAuthenticated)  {
+            const authId = user.sub;
+            const email = user.email;
+            fetch(baseURL + '/api/user', {
+                method: 'POST',
+                body: JSON.stringify({ authId, email }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then (res => res.json())
+            .then (data => {
+                setData(data)
+                setToggle(0);
+            }).catch(error => console.error({ 'Error': error }));
+        }
+    }  
+
+    useEffect(() => {
+        if (toggle == 1)  {
+            checkUser();
+        }
+    });
 
     return (
         <Card body>
             <div className="text-center">
                 <div className="m-b">
                     {
-                        imageUrl 
-                        ? <img src={imageUrl} style={{ width: 180 }} className="b-circle" alt="profile" />
+                        userData.imageURL 
+                        ? <img src={userData.imageURL} style={{ width: 180 }} className="b-circle" alt={userData.imageAlt} />
+                        : imageUrl 
+                        ? <img src={imageUrl} style={{ width: 180 }} className="b-circle" alt={imageAlt} />
                         : <img src={Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
                     }
                 </div>
-                
-            <div>
-            <Button className="btn" onClick={showWidget}> Upload Logo </Button>
-            <hr />
-            <Row className="text-center m-b">
-                <div style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', paddingLeft: '50px' }} className="align-middle">
-                <img src={ World } alt="World" style={{ width: 70, paddingRight: '5px' }} ></img>
-
-                <div className="text-muted" style={{ paddingBottom: '3px' }}>Months Earth Positive</div>
-              </div>
-          </Row>
-          <hr />
-        </div>
-      </div>
+                <Button className="btn" onClick={showWidget}> Upload Logo </Button>
+                <p className="text-muted" style={{ fontSize:'12px', paddingTop:'10px'  }}>Make sure your image is formatted 1:1 to avoid cropping.</p>
+                <hr />
+            </div>
+            <Form userData={userData}
+                imageUrl={imageUrl}
+                imageAlt={imageAlt}
+                />
     </Card>
   );
 }

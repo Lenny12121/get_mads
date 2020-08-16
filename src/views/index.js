@@ -1,5 +1,6 @@
 import Dashboard from './pages/Dashboard';
-import Account from './pages/Account'
+import Account from './pages/Account';
+import SupportedProjects from './pages/SupportedProjects';
 import Buttons from './elements/Buttons';
 import Alerts from './elements/Alerts';
 import Grid from './elements/Grid';
@@ -30,20 +31,25 @@ const pageList = [
     path: '/home',
     component: Dashboard,
   },
+  // {
+  //   name: 'Your Impact',
+  //   path: '/',
+  //   component: ErrorPage,
+  // },
   {
     name: 'Account',
     path: '/account',
     component: Account,
   },
   {
-    name: 'Alerts',
-    path: '/elements/alerts',
-    component: Alerts,
+    name: 'Your Impact',
+    path: '/error',
+    component: ErrorPage,
   },
   {
-    name: 'Grid',
-    path: '/elements/grid',
-    component: Grid,
+    name: 'Supported Projects',
+    path: '/supported-projects',
+    component: SupportedProjects,
   },
   {
     name: 'Typography',

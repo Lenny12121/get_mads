@@ -45,7 +45,7 @@ export default function ProfileWidget(props) {
     <Card body>
       <div className="text-center">
         <div className="m-b">
-          <img src={Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
+          <img src={ props.userData.imageURL ? props.userData.imageURL : Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
         </div>
         <div>
           <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>
