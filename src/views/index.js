@@ -1,6 +1,7 @@
 import Dashboard from './pages/Dashboard';
 import Account from './pages/Account';
 import SupportedProjects from './pages/SupportedProjects';
+import EarthPositiveBadges from './pages/earthPositiveBadges';
 import Buttons from './elements/Buttons';
 import Alerts from './elements/Alerts';
 import Grid from './elements/Grid';
@@ -52,24 +53,24 @@ const pageList = [
     component: SupportedProjects,
   },
   {
-    name: 'Typography',
-    path: '/elements/typography',
+    name: 'Public Ledger',
+    path: '/public/ledger',
     component: Typography,
   },
   {
-    name: 'Cards',
-    path: '/elements/cards',
+    name: 'Offset CO2',
+    path: '/offset-co21',
     component: Cards,
   },
   {
-    name: 'Tabs',
-    path: '/elements/tabs',
+    name: 'Offset Plastic',
+    path: '/offset-plastics',
     component: Tabs,
   },
   {
-    name: 'Tables',
-    path: '/elements/tables',
-    component: Tables,
+    name: 'Earth Positive Badges',
+    path: '/earth-positive-badges',
+    component: EarthPositiveBadges,
   },
   {
     name: 'Progress Bars',

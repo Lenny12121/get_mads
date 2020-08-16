@@ -1,0 +1,41 @@
+.thinCard   {
+    min-height: 0px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+
+.flexCenter, .centerRow {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    margin-bottom: 0px;
+}
+
+.flexCenter {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.centerText {
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-style: solid;
+    border-color: #43bfbf;
+    border-width: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #43bfbf;
+    font-size: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
