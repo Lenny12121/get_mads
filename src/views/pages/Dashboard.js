@@ -8,13 +8,13 @@ import Car from '../../assets/images/car.gif';
 import Coffee from '../../assets/images/coffee.gif';
 import Plant from '../../assets/images/plant.gif';
 
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import NumericLabel from 'react-pretty-numbers';
 
 
 let baseURL = 'http://localhost:3003';
 
-export default function Dashboard () {
+export default withAuthenticationRequired (function Dashboard () {
 
   let option = {
     'justification': 'L',
@@ -156,8 +156,8 @@ export default function Dashboard () {
       return (
         <div>
           <Row>
-          <div className="home-hero">
-                <h1 style={{ color: '#1a3066', paddingBottom: '0px'}}>Welcome Back {userData.companyName}!</h1>
+          <div className="home-hero" style={{ paddingLeft: '25px', paddingRight: '25px'}}>
+                <h1 style={{ color: '#1a3066', paddingBottom: '0px'}}><strong>Welcome Back {userData.companyName}!</strong></h1>
                 <h3 style={{ color: '#667380', paddingBottom: '20px'}}>You are having an amazing positive impact!</h3>
               </div>
           </Row>
@@ -286,4 +286,4 @@ export default function Dashboard () {
           </Row>
         </div>
       );
-    }
+    })

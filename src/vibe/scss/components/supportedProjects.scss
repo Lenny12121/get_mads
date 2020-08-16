@@ -1,0 +1,24 @@
+a {
+    text-decoration: none !important;
+}
+
+.projectsImage  {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 15px;
+}
+
+.movingCard {
+    position: relative;
+    top: 0;
+    transition: top ease 0.2s;
+}
+
+.movingCard:hover {
+    top: -4px;
+}
+
+.projectCard {
+    max-width: 500px;
+}

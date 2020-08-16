@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Row, Card, Button } from 'reactstrap';
 import Sun from '../../assets/images/sun.gif';
 import World from '../../assets/images/world.gif';
-import { useAuth0 } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Form from '../elements/Forms';
 
 require('dotenv').config();
@@ -13,7 +13,8 @@ let baseURL = 'http://localhost:3003';
 const cloudN = process.env.REACT_APP_CLOUD_NAME;
 const uploadPreset = process.env.REACT_APP_UPLOAD_PRESETS;
 
-export default function Account(props) {
+export default withAuthenticationRequired (function Account(props) {
+
     const [imageUrl, setImageUrl] = useState();
     const [imageAlt, setImageAlt] = useState();
 
@@ -83,4 +84,4 @@ export default function Account(props) {
                 />
     </Card>
   );
-}
+})
