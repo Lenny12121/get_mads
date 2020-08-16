@@ -2,6 +2,38 @@ const express = require('express');
 const getMads = express.Router();
 const userModel = require('../models/user');
 
+//Multer
+const multer = require('multer');
+const path = require('path');
+const helpers = require('../helpers');
+
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'uploads/');
+    },
+
+    filename: function(req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+let upload = multer({ storage: storage }).single('file')
+
+getMads.post('/uploads',function(req, res) {
+     console.log(req.body)
+    upload(req, res, function (err) {
+      if (err instanceof multer.MulterError) {
+          return res.status(500).json(err)
+         } else if (err) {
+             return res.status(500).json(err)
+         }
+    return res.status(200).send(req.file)
+
+  })
+
+});
+
 //INDEX ROUTE TO SEE ALL USERS
 getMads.get('/', (req, res) => {
   userModel.find({}, (err, foundUsers) => {
@@ -52,5 +84,37 @@ getMads.put('/id', (req, res) => {
     res.status(200).json(updatedUser);
   });
 });
+
+//POST IMAGE ROUTE
+// dashboardRouter.put('/:company', (req, res) => {
+//   let upload = multer({ storage: storage, fileFilter: helpers.imageFilter }).single('logo');
+
+//       upload(req, res, function(err) {                        
+//           if (req.fileValidationError) {
+//               res.send(req.fileValidationError);
+//               return
+//           }
+  
+//           User.findOne({company: req.params.company}, (err, foundUser) => {
+//               foundUser.company = req.body.company;
+//               foundUser.description= req.body.description;
+//               for (let index = 0; index < foundUser.featureRequests.length; index++) {
+//                   foundUser.featureRequests[index].companyName = req.body.company;
+//               };
+
+//               if (!req.file) {
+//                   foundUser.save((err, data) => {
+//                       res.redirect('/dashboard/' + foundUser.company);
+//                   });
+//               }  else {
+//                   foundUser.logo = req.file.filename;
+//                   foundUser.save((err, data) => {
+//                       res.redirect('/dashboard/' + foundUser.company);
+//                   });
+//               }
+//           }) 
+//       })
+// });
+
 
 module.exports = getMads;

@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
     planQuantity: {type: Number, default: '44'},
     type: {type: String},
     email: {type: String, required: true, unique: true},
+    imageURL: {type: String},
 },  {
     timestamps: true
 })

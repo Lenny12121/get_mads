@@ -5,6 +5,23 @@ const PORT = 3003;
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+//Multer Image Upload
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+      cb(null, 'uploads/');
+  },
+
+  // By default, multer removes file extensions so let's add them back
+  filename: function(req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+app.use(express.static('uploads'));
+
+
 //check mongoose connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
