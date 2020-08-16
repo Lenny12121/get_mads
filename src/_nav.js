@@ -25,61 +25,61 @@ export default {
       icon: 'PlusCircle',
       children: [
         {
-          name: 'Buttons',
-          url: '/elements/buttons',
+          name: 'Offset CO2',
+          url: '/offset-co2',
         },
         {
-          name: 'Grid',
-          url: '/elements/grid',
+          name: 'Offset Plastic',
+          url: '/offset-plastic',
         },
-        {
-          name: 'Alerts',
-          url: '/elements/alerts',
-        },
-        {
-          name: 'Typography',
-          url: '/elements/typography',
-        },
-        {
-          name: 'Cards',
-          url: '/elements/cards',
-        },
-        {
-          name: 'Tabs',
-          url: '/elements/tabs',
-        },
-        {
-          name: 'Tables',
-          url: '/elements/tables',
-        },
-        {
-          name: 'Breadcrumbs',
-          url: '/elements/breadcrumbs',
-        },
-        {
-          name: 'Forms',
-          url: '/elements/forms',
-        },
-        {
-          name: 'Modals',
-          url: '/elements/modals',
-        },
-        {
-          name: 'Loaders',
-          url: '/elements/loaders',
-        },
-        {
-          name: 'Avatars',
-          url: '/elements/avatars',
-        },
-        {
-          name: 'Progress Bars',
-          url: '/elements/progressbars',
-        },
-        {
-          name: 'Pagination',
-          url: '/elements/pagination',
-        },
+    //     {
+    //       name: 'Alerts',
+    //       url: '/elements/alerts',
+    //     },
+    //     {
+    //       name: 'Typography',
+    //       url: '/elements/typography',
+    //     },
+    //     {
+    //       name: 'Cards',
+    //       url: '/elements/cards',
+    //     },
+    //     {
+    //       name: 'Tabs',
+    //       url: '/elements/tabs',
+    //     },
+    //     {
+    //       name: 'Tables',
+    //       url: '/elements/tables',
+    //     },
+    //     {
+    //       name: 'Breadcrumbs',
+    //       url: '/elements/breadcrumbs',
+    //     },
+    //     {
+    //       name: 'Forms',
+    //       url: '/elements/forms',
+    //     },
+    //     {
+    //       name: 'Modals',
+    //       url: '/elements/modals',
+    //     },
+    //     {
+    //       name: 'Loaders',
+    //       url: '/elements/loaders',
+    //     },
+    //     {
+    //       name: 'Avatars',
+    //       url: '/elements/avatars',
+    //     },
+    //     {
+    //       name: 'Progress Bars',
+    //       url: '/elements/progressbars',
+    //     },
+    //     {
+    //       name: 'Pagination',
+    //       url: '/elements/pagination',
+    //     },
       ],
     },
     {
@@ -87,17 +87,17 @@ export default {
       icon: 'Layers',
       children: [
         {
-          name: 'Blank',
-          url: '/pages/blank',
+          name: 'Earth Positive Badges',
+          url: '/earth-positive-badges',
         },
-        {
-          name: 'Sub Navigation',
-          url: '/pages/subnav',
-        },
-        {
-          name: '404',
-          url: '/pages/404',
-        },
+        // {
+        //   name: 'Sub Navigation',
+        //   url: '/pages/subnav',
+        // },
+        // {
+        //   name: '404',
+        //   url: '/pages/404',
+        // },
       ],
     },
     {

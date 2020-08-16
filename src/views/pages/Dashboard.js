@@ -7,6 +7,7 @@ import Bathtubs from '../../assets/images/bathtubs.gif';
 import Car from '../../assets/images/car.gif';
 import Coffee from '../../assets/images/coffee.gif';
 import Plant from '../../assets/images/plant.gif';
+import Tooltip from '../elements/tooltip';
 
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import NumericLabel from 'react-pretty-numbers';
@@ -91,6 +92,7 @@ export default withAuthenticationRequired (function Dashboard () {
   // Calculate Tonnes of CO2 - ONCE PAYMENTS AND PLANS ARE SETUP THEY NEED TO BE ADDED INTO HERE FOR CORRECT CALC
   let totalCO2 = 0;
   let madsFootprint = 17;
+  let yearlyCO2 = 17; // Need to multiply this by plan quantity once payments set up.
     
   //Business
     //Standard
@@ -167,7 +169,8 @@ export default withAuthenticationRequired (function Dashboard () {
                 newDate={newDate}
                 diffInMonths={diffInMonths}
                 totalCO2={totalCO2}
-                totalPlasticBottles={totalPlasticBottles}/>
+                totalPlasticBottles={totalPlasticBottles}
+                yearlyCO2={yearlyCO2}/>
             </Col>
             <Col md={3}>
               <Row><h5 style={{ color: '#667380', textAlign: 'center', width:'100%'}}>Your CO2 Offset is equivalent to:</h5></Row>

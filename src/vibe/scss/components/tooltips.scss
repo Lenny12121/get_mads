@@ -1,3 +1,12 @@
 .tooltip-inner {
 	border-radius: $tooltipRoundedCorner;
 }
+
+.tooltip.show {
+    opacity: 1;
+}
+
+.tooltip.in {
+	opacity: 1;
+	filter:alpha(opacity=100);
+}
