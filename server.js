@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public/build")));
 
 //CORS
-const whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://rocky-basin-96559.herokuapp.com/'];
+const whitelist = ['http://localhost:3000', 'https://rocky-basin-96559.herokuapp.com'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) >= 0) {
