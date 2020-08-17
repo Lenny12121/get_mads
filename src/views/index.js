@@ -1,5 +1,5 @@
 import Dashboard from './pages/Dashboard';
-import Account from './pages/Account';
+import Account from './pages/Account.jsx';
 import SupportedProjects from './pages/SupportedProjects';
 import EarthPositiveBadges from './pages/earthPositiveBadges';
 import Buttons from './elements/Buttons';

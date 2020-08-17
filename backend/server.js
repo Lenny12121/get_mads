@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3003;
+const PORT = process.env.PORT || 3003;
 const mongoose = require('mongoose');
 const cors = require('cors');
+require('./database');
 
 //check mongoose connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
@@ -17,10 +18,10 @@ mongoose.connection.once('open', ()=>{
 
 //middleware
 app.use(express.json());
-app.use(express.static(path.join("public/build")));
+app.use(express.static(path.join(__dirname, "/public/build")));
 
 //CORS
-const whitelist = ['http://localhost:3000'];
+const whitelist = ['http://localhost:3000', 'http://localhost:5000'];
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) >= 0) {
@@ -36,9 +37,15 @@ app.use(cors(corsOptions));
 //controllers
 const getMadsController = require('./controllers/getmads.js');
 app.use('/api', getMadsController);
-app.use((req, res, next) => {
-    res.sendFile(path.resolve(__dirname, "public/build", "index.html"));
-});
+// app.use((req, res, next) => {
+//     res.sendFile(path.join(__dirname, "../build"));
+// });
+
+app.use(express.static(path.join(__dirname, '../build')))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, "../build"))
+})
 
 //listeners
 app.listen(PORT, () => {

@@ -1,9 +1,9 @@
 {
-  "name": "Dashboard",
+  "name": "dashboard",
   "version": "1.0.2",
   "description": "Get Mads",
   "author": "",
-  "homepage": "http://getmads.com",
+  "homepage": "http://localhost:5000",
   "copyright": "Copyright 2020 Get Mads",
   "private": true,
   "dependencies": {
@@ -37,14 +37,19 @@
     "reactstrap": "6.4.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    // "start": "react-scripts start",
+    "start": "node backend/server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "engines": {
+    "node": "10.16.0"
+}
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -55,5 +60,6 @@
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.1.6"
-  }
+  },
+  "proxy": "http://localhost:4000"
 }

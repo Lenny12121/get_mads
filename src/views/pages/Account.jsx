@@ -13,7 +13,7 @@ let baseURL = 'http://localhost:3003';
 const cloudN = process.env.REACT_APP_CLOUD_NAME;
 const uploadPreset = process.env.REACT_APP_UPLOAD_PRESETS;
 
-export default withAuthenticationRequired (function Account(props) {
+export default function Account(props) {
 
     const [imageUrl, setImageUrl] = useState();
     const [imageAlt, setImageAlt] = useState();
@@ -84,4 +84,4 @@ export default withAuthenticationRequired (function Account(props) {
                 />
     </Card>
   );
-})
+}
