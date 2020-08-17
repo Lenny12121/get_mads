@@ -17,7 +17,7 @@
 	}
 
 	.modal-content {
-		border-radius: $cardRoundedCorner;
+		border-radius: 10px;
 		@include cardShadow;
 		padding: $panelPadding;
 		align-items: center;
