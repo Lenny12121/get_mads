@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Get Mads",
   "author": "",
-  "homepage": "http://localhost:5000",
+  "homepage": "https://rocky-basin-96559.herokuapp.com/home",
   "copyright": "Copyright 2020 Get Mads",
   "private": true,
   "dependencies": {

@@ -13,7 +13,7 @@ ReactDOM.render(
     <Auth0Provider
         domain='get-mads.eu.auth0.com'
         clientId='NlxMZ2eLSHr1brBFb0SFsD0wwWDiaqwM'
-        redirectUri='http://localhost:3000/home'
+        redirectUri='https://rocky-basin-96559.herokuapp.com/home'
     >
         <App />
     </Auth0Provider>,
