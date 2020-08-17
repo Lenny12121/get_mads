@@ -1,7 +1,8 @@
 import React from 'react';
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import  { Card, CardBody, Row, Col } from 'reactstrap';
+import  { Card, CardBody, Row, Col, Button } from 'reactstrap';
 import { Check } from 'react-feather';
+import Modal from '../elements/Modals';
 
 function EarthPositiveBadges() {
     return (
@@ -13,7 +14,7 @@ function EarthPositiveBadges() {
                     <h3 style={{ color: '#667380', paddingBottom: '30px', paddingLeft: '25px', paddingRight: '25px'}}>Show the world your commitment to fighting the climate madness.</h3>
                 </div>
             </Row>
-            
+            <Row>
             <Col md={6}>
                 <Card className="thinCard" style={{ minHeight:'0px', flexDirection:'row' }}>
                     <CardBody style={{ padding: '0px' }}>
@@ -65,6 +66,27 @@ function EarthPositiveBadges() {
                     </CardBody>
                 </Card>
             </Col>
+            <Col md={3}>
+            <Row>
+                <Card className="movingCard">
+                    <CardBody className="flex-column-center">
+                        <img
+                            //NEED TO ADD DYNAMIC WIDGET FROM API
+                            src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                            style={{ width: '110%'}}
+                            alt="Light Badge"
+                            aria-hidden={true}
+                        />
+                        <div className="m-l">
+                            <Modal />
+                        </div>
+                    </CardBody>
+                </Card>
+            </Row>
+            </Col>
+            <Col md={6}>
+            </Col>
+        </Row>
         </div>
     )
 }
