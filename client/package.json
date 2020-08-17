@@ -50,5 +50,5 @@
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.1.6"
   },
-  "proxy": "http://localhost:3003"
+  "proxy": "https://rocky-basin-96559.herokuapp.com"
 }
