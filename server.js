@@ -21,20 +21,20 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public/build")));
 
 //CORS
-const whitelist = ['http://localhost:3000', 'https://rocky-basin-96559.herokuapp.com'];
-const corsOptions = {
-  origin: (origin, callback) => {
-    console.log('this is the origin: ', origin)
-    console.log('this is the callback: ', callback)
-    if (whitelist.indexOf(origin) >= 0) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
-};
+// const whitelist = ['http://localhost:3000', 'https://rocky-basin-96559.herokuapp.com'];
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     console.log('this is the origin: ', origin)
+//     console.log('this is the callback: ', callback)
+//     if (whitelist.indexOf(origin) >= 0) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 //controllers
 const getMadsController = require('./controllers/getmads.js');
