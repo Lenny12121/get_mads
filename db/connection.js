@@ -14,7 +14,7 @@ mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.once('open', ()=>{
-    console.log('connected to mongoose...')
+    console.log('connected to mongoose...');
 });
 
-module.exports = mongoose
+module.exports = mongoose;
