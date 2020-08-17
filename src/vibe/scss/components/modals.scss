@@ -19,8 +19,24 @@
 	.modal-content {
 		border-radius: 10px;
 		@include cardShadow;
-		padding: $panelPadding;
+		// padding: $panelPadding;
 		align-items: center;
+	}
+
+	.modalWrapper {
+		border-radius: 10px;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
+	}
+
+	.modalWrapperDark {
+		border-radius: 10px;
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		padding: 15px;
 	}
 
 	&.fade {

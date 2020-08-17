@@ -27,7 +27,7 @@ function SupportedProjects() {
                                 alt="Cookstoves in Malawi"
                                 aria-hidden={true}
                             />
-                            <div className="m-l">
+                            <div className="m-l"  style={{marginLeft:'0px'}}>
                                 <h3 className="h3" style={{ color: '#1a3066' }}><strong>UN Project 9933: Improved Cook Stoves in Malawi</strong></h3>
                                 <p className="text-muted">
                                     Helping rural families switch to safer, cleaner, more efficient cookstoves.
@@ -46,7 +46,7 @@ function SupportedProjects() {
                                 alt="Plastic Bank"
                                 aria-hidden={true}
                             />
-                            <div className="m-l">
+                            <div className="m-l"  style={{marginLeft:'0px'}}>
                                 <h3 className="h3" style={{ color: '#1a3066' }}><strong>UN Plastic Bank: Transforming Plastic Waste Into Value
                                 </strong></h3>
                                 <p className="text-muted">
@@ -66,7 +66,7 @@ function SupportedProjects() {
                                 alt="Planting trees in India"
                                 aria-hidden={true}
                             />
-                            <div className="m-l">
+                            <div className="m-l" style={{marginLeft:'0px'}}>
                                 <h3 className="h3" style={{ color: '#1a3066' }}><strong>UN UN Project 5016: Reforestation in Rural India</strong></h3>
                                 <p className="text-muted">
                                     Supporting reforestation projects and economic opportunity in rural East India.
@@ -88,7 +88,7 @@ function SupportedProjects() {
                                     alt="Hydroelectricity Chile"
                                     aria-hidden={true}
                                 />
-                                <div className="m-l">
+                                <div className="m-l"  style={{marginLeft:'0px'}}>
                                     <h3 className="h3" style={{ color: '#1a3066' }}><strong>UN Project 6848: Hydroelectric Energy in Chile</strong></h3>
                                     <p className="text-muted">
                                         Transitioning Chile to Renewable Energy with Hydroelectric Power.

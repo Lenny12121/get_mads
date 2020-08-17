@@ -3,6 +3,11 @@ import { withAuthenticationRequired } from "@auth0/auth0-react";
 import  { Card, CardBody, Row, Col, Button } from 'reactstrap';
 import { Check } from 'react-feather';
 import Modal from '../elements/Modals';
+import ModalDark from '../elements/ModalLight';
+import ModalLight from '../elements/ModalDarkDynamic';
+import ModalDarkRight from '../elements/ModalDarkRight';
+import ModalLightRight from '../elements/ModalLightRight';
+import ModalDarkRightBottom from '../elements/ModalDarkRightBottom';
 
 function EarthPositiveBadges() {
     return (
@@ -74,7 +79,7 @@ function EarthPositiveBadges() {
                             //NEED TO ADD DYNAMIC WIDGET FROM API
                             src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
                             style={{ width: '110%'}}
-                            alt="Light Badge"
+                            alt="Dark Badge"
                             aria-hidden={true}
                         />
                         <div className="m-l">
@@ -83,8 +88,88 @@ function EarthPositiveBadges() {
                     </CardBody>
                 </Card>
             </Row>
+            <Row>
+                <Card className="movingCard" style={{backgroundColor:'#5d5d5d'}}>
+                    <CardBody className="flex-column-center">
+                        <img
+                            //NEED TO ADD DYNAMIC WIDGET FROM API
+                            src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                            style={{ width: '110%'}}
+                            alt="Light Badge"
+                            aria-hidden={true}
+                        />
+                        <div className="m-l">
+                            <ModalDark />
+                        </div>
+                    </CardBody>
+                </Card>
+            </Row>
+            <Row>
+                <Card className="movingCard">
+                    <CardBody className="flex-column-center">
+                        <img
+                            //NEED TO ADD DYNAMIC WIDGET FROM API
+                            src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                            style={{ width: '110%'}}
+                            alt="Dark Badge"
+                            aria-hidden={true}
+                        />
+                        <div className="m-l">
+                            <ModalLight />
+                        </div>
+                    </CardBody>
+                </Card>
+            </Row>
             </Col>
-            <Col md={6}>
+            <Col md={3}>
+                <Row>
+                    <Card className="movingCard" style={{backgroundColor:'#5d5d5d'}}>
+                        <CardBody className="flex-column-center">
+                            <img
+                                //NEED TO ADD DYNAMIC WIDGET FROM API
+                                src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                                style={{ width: '110%'}}
+                                alt="Light Badge"
+                                aria-hidden={true}
+                            />
+                            <div className="m-l">
+                                <ModalDarkRight />
+                            </div>
+                        </CardBody>
+                    </Card>
+                </Row>
+                <Row>
+                <Card className="movingCard">
+                    <CardBody className="flex-column-center">
+                        <img
+                            //NEED TO ADD DYNAMIC WIDGET FROM API
+                            src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                            style={{ width: '110%'}}
+                            alt="Dark Badge"
+                            aria-hidden={true}
+                        />
+                        <div className="m-l">
+                            <ModalLightRight />
+                        </div>
+                    </CardBody>
+                </Card>
+            </Row>
+            <Row>
+                <Card className="movingCard" style={{backgroundColor:'#5d5d5d'}}>
+                    <CardBody className="flex-column-center">
+                        <img
+                            //NEED TO ADD DYNAMIC WIDGET FROM API
+                            src='https://lh3.googleusercontent.com/d/1RTnhaLxzOq_P_fnlt2HiLk0huw-2zScU'
+                            style={{ width: '110%'}}
+                            alt="Light Badge"
+                            aria-hidden={true}
+                        />
+                        <div className="m-l">
+                            <ModalDarkRightBottom />
+                        </div>
+                    </CardBody>
+                </Card>
+            </Row>
             </Col>
         </Row>
         </div>

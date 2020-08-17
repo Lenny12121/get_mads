@@ -1,5 +1,7 @@
 .tooltip-inner {
 	border-radius: $tooltipRoundedCorner;
+	max-width: 350px;
+	padding: 5px;
 }
 
 .tooltip.show {
