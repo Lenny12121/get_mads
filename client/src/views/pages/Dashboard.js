@@ -13,7 +13,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import NumericLabel from 'react-pretty-numbers';
 
 
-let baseURL = 'http://localhost:3003';
+let baseURL = 'https://rocky-basin-96559.herokuapp.com';
 
 export default withAuthenticationRequired (function Dashboard () {
 
