@@ -1,65 +1,25 @@
 {
-  "name": "dashboard",
-  "version": "1.0.2",
-  "description": "Get Mads",
-  "author": "",
-  "homepage": "http://localhost:5000",
-  "copyright": "Copyright 2020 Get Mads",
-  "private": true,
-  "dependencies": {
-    "@auth0/auth0-react": "^1.0.0",
-    "@auth0/auth0-spa-js": "^1.11.0",
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "bcrypt": "^5.0.0",
-    "bootstrap": "^4.3.1",
-    "chart.js": "^2.7.3",
-    "classnames": "^2.2.6",
-    "cloudinary": "^1.22.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-form-data": "^2.0.14",
-    "mongoose": "^5.9.28",
-    "multer": "^1.4.2",
-    "node-sass": "^4.14.1",
-    "react": "^16.13.1",
-    "react-chartjs-2": "2.6.4",
-    "react-copy-to-clipboard": "^5.0.2",
-    "react-dom": "^16.8.1",
-    "react-feather": "^1.1.6",
-    "react-fontawesome": "1.6.1",
-    "react-pretty-numbers": "^3.0.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.4.3",
-    "reactstrap": "6.4.0"
-  },
-  "scripts": {
-    // "start": "react-scripts start",
-    "start": "node backend/server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install npm && run build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "engines": {
-    "node": "10.16.0"
-}
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
-    "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.1.6"
-  },
-  "proxy": "http://localhost:4000"
+    "name": "getmads",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "engines": {
+        "node": "10.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+        "start": "node server.js",
+        "postinstall": "cd client && npm install && npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "concurrently": "^5.1.0",
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.8.11"
+    }
 }
