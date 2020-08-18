@@ -27,6 +27,16 @@ const mongoose = require('mongoose');
 //     console.log('connected to mongoose...');
 // });
 
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads';
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log('MongoDB Connected…')
+})
+.catch(err => console.log(err))
+
 //middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public/build")));
