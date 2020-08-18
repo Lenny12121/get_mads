@@ -2,18 +2,6 @@ const express = require('express');
 const getMads = express.Router();
 const userModel = require('../models/user');
 
-//NEW
-const MongoClient = require('mongodb').MongoClient;
-
-// replace the uri string with your connection string.
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads';
-MongoClient.connect(uri, function(err, client) {
-   if(err) {
-        console.log('Error occurred while connecting to MongoDB Atlas...\n',err);
-   }
-   console.log('Connected...');
-   const collection = client.db("GetMads").collection("users");
-
 //INDEX ROUTE TO SEE ALL USERS
 getMads.get('/', (req, res) => {
   userModel.find({}, (err, foundUsers) => {
@@ -62,9 +50,6 @@ getMads.put('/update', (req, res) => {
     }
     res.status(200).send(updatedUser);
   });
-});
-
-client.close();
 });
 
 module.exports = getMads;
