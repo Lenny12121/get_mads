@@ -39,9 +39,9 @@ require('dotenv').config();
 // })
 // .catch(err => console.log(err))
 
-// const db = require("./db/connection");
-// const dbName = "GetMads";
-// const collectionName = "users";
+const db = require("./db/connection");
+const dbName = "GetMads";
+const collectionName = "users";
 
 //middleware
 app.use(express.json());
@@ -64,12 +64,12 @@ app.use(express.static(path.join(__dirname, "/public/build")));
 // app.use(cors(corsOptions));
 
 
-// db.initialize(dbName, collectionName, function(dbCollection) { // successCallback
-//   // get all items
-//   dbCollection.find().toArray(function(err, result) {
-//       if (err) throw err;
-//         console.log(result);
-//   });
+db.initialize(dbName, collectionName, function(dbCollection) { // successCallback
+  // get all items
+  dbCollection.find().toArray(function(err, result) {
+      if (err) throw err;
+        console.log(result);
+  });
 
 
 // const MongoClient = require('mongodb').MongoClient;
@@ -87,9 +87,9 @@ app.use('/api', getMadsController);
 //     res.sendFile(path.join(__dirname, "../build"));
 // });
 
-// }, function(err) { // failureCallback
-//   throw (err);
-// });
+}, function(err) { // failureCallback
+  throw (err);
+});
 
 // client.close();
 // });
