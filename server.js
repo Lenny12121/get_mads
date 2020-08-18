@@ -72,12 +72,12 @@ app.use(express.static(path.join(__dirname, "/public/build")));
 //   });
 
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("GetMads").collection("users");
-  // perform actions on the collection object
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("GetMads").collection("users");
+//   // perform actions on the collection object
 
 
 //controllers
@@ -91,8 +91,8 @@ app.use('/api', getMadsController);
 //   throw (err);
 // });
 
-client.close();
-});
+// client.close();
+// });
 
 app.use(express.static(__dirname + '/client/build/'));
 
