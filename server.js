@@ -39,7 +39,7 @@ const mongoose = require('mongoose');
 
 const db = require("./db/connection");
 const dbName = "GetMads";
-const collectionName = "User";
+const collectionName = "users";
 
 //middleware
 app.use(express.json());
