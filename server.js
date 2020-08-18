@@ -71,6 +71,15 @@ app.use(express.static(path.join(__dirname, "/public/build")));
 //         console.log(result);
 //   });
 
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("GetMads").collection("users");
+  // perform actions on the collection object
+
+
 //controllers
 const getMadsController = require('./controllers/getmads.js');
 app.use('/api', getMadsController);
@@ -81,6 +90,9 @@ app.use('/api', getMadsController);
 // }, function(err) { // failureCallback
 //   throw (err);
 // });
+
+client.close();
+});
 
 app.use(express.static(__dirname + '/client/build/'));
 

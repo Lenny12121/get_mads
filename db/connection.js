@@ -7,11 +7,11 @@ const mongoose = require('mongoose');
 
 require('dotenv').config();
 
-const MongoClient = require("mongodb").MongoClient;
- const client = await new MongoClient(process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads',{ useNewUrlParser: true});
- client.connect();
-mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
-mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err); }); 
+// const MongoClient = require("mongodb").MongoClient;
+// const client = await new MongoClient(process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads',{ useNewUrlParser: true});
+// client.connect();
+// mongoose.connection.once('open', () => { console.log('MongoDB Connected'); });
+// mongoose.connection.on('error', (err) => { console.log('MongoDB connection error: ', err); }); 
 
 // const mongoose = require('mongoose');
 // const MongoClient = require('mongodb').MongoClient;
