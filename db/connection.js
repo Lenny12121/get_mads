@@ -17,7 +17,8 @@ require('dotenv').config();
 // const MongoClient = require('mongodb').MongoClient;
 
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
+// const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
+const MONGODB_URI = 'mongodb+srv://Lenny:Crabtree40@getmads.8xgth.azure.mongodb.net/GetMads?retryWrites=true&w=majority'
 mongoose.connection.on('error', err => console.log(err.message + ' is Mongod not running?'))
 mongoose.connection.on('disconnected', () => console.log('mongo disconnected'));
 
