@@ -39,9 +39,9 @@ require('dotenv').config();
 // })
 // .catch(err => console.log(err))
 
-const db = require("./db/connection");
-const dbName = "GetMads";
-const collectionName = "users";
+// const db = require("./db/connection");
+// const dbName = "GetMads";
+// const collectionName = "users";
 
 //middleware
 app.use(express.json());
@@ -64,20 +64,20 @@ app.use(express.static(path.join(__dirname, "/public/build")));
 // app.use(cors(corsOptions));
 
 
-db.initialize(dbName, collectionName, function(dbCollection) { // successCallback
-  // get all items
-  dbCollection.find().toArray(function(err, result) {
-      if (err) throw err;
-        console.log(result);
-  });
+// db.initialize(dbName, collectionName, function(dbCollection) { // successCallback
+//   // get all items
+//   dbCollection.find().toArray(function(err, result) {
+//       if (err) throw err;
+//         console.log(result);
+//   });
 
 
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
-// const client = new MongoClient(uri, { useNewUrlParser: true });
-// client.connect(err => {
-//   const collection = client.db("GetMads").collection("users");
-//   // perform actions on the collection object
+const MongoClient = require('mongodb').MongoClient;
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/getmads'
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("GetMads").collection("users");
+  // perform actions on the collection object
 
 
 //controllers
@@ -87,12 +87,12 @@ app.use('/api', getMadsController);
 //     res.sendFile(path.join(__dirname, "../build"));
 // });
 
-}, function(err) { // failureCallback
-  throw (err);
-});
-
-// client.close();
+// }, function(err) { // failureCallback
+//   throw (err);
 // });
+
+client.close();
+});
 
 app.use(express.static(__dirname + '/client/build/'));
 

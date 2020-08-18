@@ -14,7 +14,7 @@ getMads.get('/', (req, res) => {
 
 //FIND USER BY ID
 getMads.get('/user', (req, res) => {
-  userModel.findOne({ email:req.body.email}, (err, foundUser) =>  {
+  userModel.findOne({ authId: req.body.authId }, (err, foundUser) =>  {
     if (err) {
       res.status(400).json({ error: err.message });
     }
@@ -25,6 +25,7 @@ getMads.get('/user', (req, res) => {
 //POST ROUTE FOR CHECKING IF USER EXISTS IF NOT USER CREATION
 getMads.post('/user', (req, res) => {
   userModel.findOne({ authId: req.body.authId }, (err, foundUser) =>  {
+    console.log('This is the found User: ', foundUser);
     if (foundUser == null)  {
       userModel.create(req.body, (error, createdUser) => {
         console.log('This is the created User:' , createdUser )
