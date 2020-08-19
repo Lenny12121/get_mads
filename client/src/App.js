@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import DashboardLayout from './layouts/DashboardLayout';
 import './vibe/scss/styles.scss';

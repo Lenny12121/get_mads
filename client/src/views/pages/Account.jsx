@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Card, Button } from 'reactstrap';
+import { Card, Button } from 'reactstrap';
 import Sun from '../../assets/images/sun.gif';
-import World from '../../assets/images/world.gif';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Form from '../elements/Forms';
 
@@ -10,10 +9,10 @@ require('dotenv').config();
 let baseURL = 'https://rocky-basin-96559.herokuapp.com' || 'http://localhost:3003';
 
 //ENV NOT WORKING
-const cloudN = process.env.REACT_APP_CLOUD_NAME;
-const uploadPreset = process.env.REACT_APP_UPLOAD_PRESETS;
+// const cloudN = process.env.REACT_APP_CLOUD_NAME;
+// const uploadPreset = process.env.REACT_APP_UPLOAD_PRESETS;
 
-export default function Account(props) {
+export default withAuthenticationRequired (function Account(props) {
 
     const [imageUrl, setImageUrl] = useState();
     const [imageAlt, setImageAlt] = useState();
@@ -57,10 +56,10 @@ export default function Account(props) {
     }  
 
     useEffect(() => {
-        if (toggle == 1)  {
+        if (toggle === 1)  {
             checkUser();
         }
-    });
+    },[props]);
 
     return (
         <Card body>
@@ -84,4 +83,4 @@ export default function Account(props) {
                 />
     </Card>
   );
-}
+})

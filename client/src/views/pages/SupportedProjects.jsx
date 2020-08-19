@@ -19,7 +19,7 @@ function SupportedProjects() {
             </Row>
             <Row>
                 <Col className="projectCard">
-                    <a href="https://www.getmads.com/journal/un-project-9933-improved-cook-stoves-in-malawi" target="_blank">
+                    <a href="https://www.getmads.com/journal/un-project-9933-improved-cook-stoves-in-malawi" target="_blank" rel="noopener noreferrer">
                     <Card className="movingCard">
                         <CardBody className="flex-column-center" style={{ padding: '0px' }}>
                             <img className="projectsImage"
@@ -38,7 +38,7 @@ function SupportedProjects() {
                     </a>
                 </Col >
                 <Col className="projectCard">
-                <a href="https://www.getmads.com/journal/the-plastic-bank-turning-plastic-pollution-into-empowering-income" target="_blank">
+                <a href="https://www.getmads.com/journal/the-plastic-bank-turning-plastic-pollution-into-empowering-income" target="_blank" rel="noopener noreferrer">
                     <Card className="movingCard">
                         <CardBody className="flex-column-center" style={{ padding: '0px' }}>
                             <img className="projectsImage"
@@ -58,7 +58,7 @@ function SupportedProjects() {
                     </a>
                 </Col >
                 <Col className="projectCard">
-                <a href="https://www.getmads.com/journal/un-project-5016-reforestation-in-rural-india" target="_blank">
+                <a href="https://www.getmads.com/journal/un-project-5016-reforestation-in-rural-india" target="_blank" rel="noopener noreferrer">
                     <Card className="movingCard">
                         <CardBody className="flex-column-center" style={{ padding: '0px' }}>
                             <img className="projectsImage"
@@ -80,7 +80,7 @@ function SupportedProjects() {
 
             <Row>
                 <Col className="projectCard">
-                    <a href="https://www.getmads.com/journal/un-project-6848-hydroelectric-energy-in-chile" target="_blank">
+                    <a href="https://www.getmads.com/journal/un-project-6848-hydroelectric-energy-in-chile" target="_blank" rel="noopener noreferrer">
                         <Card className="movingCard">
                             <CardBody className="flex-column-center" style={{ padding: '0px' }}>
                                 <img className="projectsImage"

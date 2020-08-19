@@ -7,7 +7,6 @@ import Bathtubs from '../../assets/images/bathtubs.gif';
 import Car from '../../assets/images/car.gif';
 import Coffee from '../../assets/images/coffee.gif';
 import Plant from '../../assets/images/plant.gif';
-import Tooltip from '../elements/tooltip';
 
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import NumericLabel from 'react-pretty-numbers';
@@ -96,9 +95,9 @@ export default withAuthenticationRequired (function Dashboard (props) {
     
   //Business
     //Standard
-    if (userData.plan == 'Standard') {
+    if (userData.plan === 'Standard') {
       let monthlyCO2 = madsFootprint/12;
-      if (diffInMonths == 0) {
+      if (diffInMonths === 0) {
         totalCO2 = Math.round((monthlyCO2) * 100) / 100
       } else {
         totalCO2 = Math.round((diffInMonths * monthlyCO2) * 100) / 100
@@ -110,9 +109,9 @@ export default withAuthenticationRequired (function Dashboard (props) {
     
   //Business
     //Standard
-    if (userData.plan == 'Standard') {
+    if (userData.plan === 'Standard') {
       let monthlyBottles = 100;
-      if (diffInMonths == 0) {
+      if (diffInMonths === 0) {
         totalPlasticBottles = monthlyBottles;
       } else {
         totalPlasticBottles = monthlyBottles * diffInMonths;
@@ -150,7 +149,7 @@ export default withAuthenticationRequired (function Dashboard (props) {
   useEffect(() => {
     console.log(userData);
     console.log(toggle);
-      if (toggle == 1)  {
+      if (toggle === 1)  {
         checkUser();
       }
   },[props]);

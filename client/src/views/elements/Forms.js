@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Form, FormGroup, Label, Input, FormText, Col, Row, Card, CardBody } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Col, Row, Card, CardBody } from 'reactstrap';
 
 let baseURL = 'https://rocky-basin-96559.herokuapp.com' || 'http://localhost:3003';
 

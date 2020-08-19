@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { Button, Badge, NavItem, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Switch, Route } from 'react-router-dom';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Header, SidebarNav, Footer, PageContent, Avatar, PageAlert, Page } from '../vibe';
 import Logo from '../assets/images/bird.png';
 import nav from '../_nav';
@@ -9,7 +9,6 @@ import ContextProviders from '../vibe/components/utilities/ContextProviders';
 import handleKeyAccessibility, { handleClickAccessibility } from '../vibe/helpers/handleTabAccessibility';
 
 import  LoginButton from '../vibe/components/login';
-import LogoutButton from '../vibe/components/logout';
 
 const MOBILE_SIZE = 992;
 

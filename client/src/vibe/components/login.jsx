@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import Logout from './logout';
-
-let baseURL = 'https://rocky-basin-96559.herokuapp.com' || 'http://localhost:3003';
 
 const LoginButton = () => {
     const { loginWithRedirect, isAuthenticated, user } = useAuth0();

@@ -19,7 +19,7 @@ const NavSingleItem = ({ item }) => {
     );
   } else {
     // Force relative URLs to start with a slash
-    const url = item.url.charAt(0) === '/' ? item.url : `/${item.url}`;
+    // const url = item.url.charAt(0) === '/' ? item.url : `/${item.url}`;
 
     return (
       <li className="nav-item">

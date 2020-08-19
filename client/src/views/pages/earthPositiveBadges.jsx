@@ -1,6 +1,6 @@
 import React from 'react';
 import { withAuthenticationRequired } from "@auth0/auth0-react";
-import  { Card, CardBody, Row, Col, Button } from 'reactstrap';
+import  { Card, CardBody, Row, Col } from 'reactstrap';
 import { Check } from 'react-feather';
 import Modal from '../elements/Modals';
 import ModalDark from '../elements/ModalLight';

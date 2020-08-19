@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Row, Card, Col } from 'reactstrap';
 import Sun from '../../../assets/images/sun.gif';
 import World from '../../../assets/images/world.gif';
