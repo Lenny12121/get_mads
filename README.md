@@ -8,7 +8,7 @@ This is a dashboard built for users to be able to track their CO2 and Plastic of
 ## Using the App
 In order to use the app, download the full folder for the site to work. You will need a baseline understanding of Express, MongoDB/Mongoose/Atlas, React & auth0 to understand how it is put together and what changes can be made.
 
-Install the dependencies by running `npm install` in both the root and the client folders. To the application run `npm start`, as concurrently is used this will start both the server and the React front-end. 
+Install the dependencies by running `npm install` in both the root and the client folders. To start the application run `npm start` in the client folder to start the React front-end and `nodemon server.js` in the root to start the Express server. 
 
 ## Still Required
 1. Signup flow needs to be improved in production app.

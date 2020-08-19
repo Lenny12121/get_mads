@@ -46,35 +46,24 @@ export default function ProfileWidget(props) {
 
   return (
     <Card body>
-      <div className="text-center">
-        <div className="m-b">
-          {
-            props.toggle === 1
-            ? <Loader type="puff"/>
-            : <img src={ props.userData.imageURL ? props.userData.imageURL : Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
-          }
+      {
+        props.toggle === 1
+        ? 
+        <Loader type="puff"/>
+        :
+        <div className="text-center">
+          <div className="m-b">
+            <img src={ props.userData.imageURL ? props.userData.imageURL : Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
         </div>
         <div>
-          {
-            props.toggle === 1
-            ? <Loader type="puff"/>
-            : <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>
-          }
-          {
-            props.toggle === 1
-            ? <Loader type="puff"/>
-            : <div className="h5 text-muted">Member Since: {props.newDate}</div>
-          }
+          <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>
+          <div className="h5 text-muted">Member Since: {props.newDate}</div>
           <hr />
           <Row className="text-center m-b">
             <Col>
               <div style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', paddingLeft: '50px' }} className="align-middle">
               <img src={ World } alt="World" style={{ width: 70, paddingRight: '5px' }} ></img>
-              {
-                props.toggle === 1
-                ? <Loader type="puff"/>
-                : <h3 style={{ color: '#1a3066', paddingRight: '7px', paddingLeft: '7px' }}><strong>{props.diffInMonths}</strong></h3>
-              }
+              <h3 style={{ color: '#1a3066', paddingRight: '7px', paddingLeft: '7px' }}><strong>{props.diffInMonths}</strong></h3>
               <div className="text-muted" style={{ paddingBottom: '3px' }}>Months Earth Positive</div>
               </div>
             </Col>
@@ -112,6 +101,7 @@ export default function ProfileWidget(props) {
           </Row>
         </div>
       </div>
+      }
     </Card>
   );
 }
