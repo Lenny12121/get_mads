@@ -55,15 +55,26 @@ export default function ProfileWidget(props) {
           }
         </div>
         <div>
-          <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>
-          <div className="h5 text-muted">Member Since: {props.newDate}</div>
+          {
+            props.toggle === 1
+            ? <Loader type="puff"/>
+            : <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>
+          }
+          {
+            props.toggle === 1
+            ? <Loader type="puff"/>
+            : <div className="h5 text-muted">Member Since: {props.newDate}</div>
+          }
           <hr />
           <Row className="text-center m-b">
             <Col>
               <div style={{ height: '100%', width: '100%', display: 'flex', alignItems: 'center', paddingLeft: '50px' }} className="align-middle">
               <img src={ World } alt="World" style={{ width: 70, paddingRight: '5px' }} ></img>
-
-              <h3 style={{ color: '#1a3066', paddingRight: '7px', paddingLeft: '7px' }}><strong>{props.diffInMonths}</strong></h3>
+              {
+                props.toggle === 1
+                ? <Loader type="puff"/>
+                : <h3 style={{ color: '#1a3066', paddingRight: '7px', paddingLeft: '7px' }}><strong>{props.diffInMonths}</strong></h3>
+              }
               <div className="text-muted" style={{ paddingBottom: '3px' }}>Months Earth Positive</div>
               </div>
             </Col>
