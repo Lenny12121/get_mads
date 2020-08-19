@@ -8,6 +8,7 @@ import NumericLabel from 'react-pretty-numbers';
 import Tooltip from '../../elements/tooltip';
 import TooltipCO2 from '../../elements/tooltipCO2';
 import TooltipPlastic from '../../elements/tooltipPlastic';
+import { Loader } from '../../../vibe';
 
 export default function ProfileWidget(props) {
 
@@ -47,7 +48,11 @@ export default function ProfileWidget(props) {
     <Card body>
       <div className="text-center">
         <div className="m-b">
-          <img src={ props.userData.imageURL ? props.userData.imageURL : Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
+          {
+            props.toggle === 1
+            ? <Loader type="puff"/>
+            : <img src={ props.userData.imageURL ? props.userData.imageURL : Sun} style={{ width: 180 }} className="b-circle" alt="profile" />
+          }
         </div>
         <div>
           <h2 className="h3" style={{ color: '#1a3066' }}>{props.userData.companyName}</h2>

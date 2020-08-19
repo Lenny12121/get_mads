@@ -165,6 +165,7 @@ export default withAuthenticationRequired (function Dashboard (props) {
           <Row>
             <Col md={6}>
               <Profile userData={userData}
+                toggle={toggle}
                 newDate={newDate}
                 diffInMonths={diffInMonths}
                 totalCO2={totalCO2}
