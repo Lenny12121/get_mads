@@ -148,8 +148,8 @@ export default withAuthenticationRequired (function Dashboard (props) {
     let bathtubs = totalPlasticBottles/avgBathTub;
 
   useEffect(() => {
-    console.log(userData)
-    console.log(toggle)
+    console.log(userData);
+    console.log(toggle);
       if (toggle == 1)  {
         checkUser();
       }
