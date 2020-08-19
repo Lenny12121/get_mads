@@ -1,16 +1,16 @@
-##Description
+##Description##
 This is a dashboard built for users to be able to track their CO2 and Plastic offsets. The front-end was built using React and the backend is built using Node (Express). The front-end was a adapted from [Vibe](https://github.com/NiceDash/Vibe "Vibe")
 
 
-##Deployed Link
+##Deployed Link##
 [Demo](https://rocky-basin-96559.herokuapp.com/home "Demo")
 
-##Using the App
+##Using the App##
 In order to use the app, download the full folder for the site to work. You will need a baseline understanding of Express, MongoDB/Mongoose/Atlas, React & auth0 to understand how it is put together and what changes can be made.
 
 Install the dependencies by running `npm install` in both the root and the client folders. To the application run `npm start`, as concurrently is used this will start both the server and the React front-end. 
 
-##Still Required
+##Still Required##
 1. Signup flow needs to be improved in production app.
 
 2. Chargebee is to be integrated for payment flow.
@@ -22,7 +22,7 @@ Install the dependencies by running `npm install` in both the root and the clien
 5. Public ledger page still requires design and upload.
 
 
-##Built With
+##Built With##
 1. [Node](https://nodejs.org/en/ "Node") - JavaScript Runtime Environment
 2. [NPM](https://www.npmjs.com/ "NPM") - Package Manager
 3. [Express](https://expressjs.com/en/starter/installing.html "Express") - Web Framework
